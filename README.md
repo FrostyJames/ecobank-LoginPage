@@ -1,21 +1,54 @@
 
-# ecobank-LoginPage
-A ui design of a login page for Ecobank 
+# Ecobank Login Page
 
-# React + Vite
+A responsive login page built with **React** and **Tailwind CSS**, inspired by Ecobank’s digital banking interface.  
+This project demonstrates a modern two‑panel layout with branding on the left and a secure login form on the right.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## ✨ Features
+- **Responsive design**: Stacks vertically on mobile, side‑by‑side on larger screens.
+- **Glassmorphism styling**: Semi‑transparent panels with blur and shadows.
+- **Login form**:
+  - Username and password fields
+  - "Remember Me" checkbox
+  - Forgot Password link
+  - Gradient Sign In button with hover effects
+- **Branding panel**:
+  - Ecobank logo at the top
+  - Welcome text and description
+  - Compact "Learn More" button with hover animation
+- **Footer**: Dynamic year display with copyright.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🛠️ Technologies
+- [React](https://reactjs.org/) – component‑based UI
+- [Tailwind CSS](https://tailwindcss.com/) – utility‑first styling
+- JavaScript (ES6+)
+- Assets: background image and Ecobank logo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
+src/
+├── assets/
+│   ├── ImageBackground.png
+│   └── Ecobank2.png
+├── components/
+│   └── LoginForm.jsx
+├── App.jsx
+├── main.jsx
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/ecobank-loginpage.git
+cd ecobank-loginpage
+
+npm install
+npm run dev
