@@ -1,122 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import React from "react";
+import LoginForm from "./components/LoginForm";
+import ImageBackground from "./assets/ImageBackground.png";
+import Ecobank2 from "./assets/Ecobank2.png";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+    <div
+      className="flex flex-col md:flex-row h-screen w-screen text-white"
+      style={{
+        backgroundImage: `url(${ImageBackground})`,
+        backgroundSize: "100% 100%",   // stretch to fill both width and height
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Left Panel */}
+      <div className="flex-1 flex flex-col justify-start px-6 sm:px-12 md:px-16 pt-4 bg-black bg-opacity-50 text-center md:text-left">
+        {/* Logo at top-left */}
+        <img
+          src={Ecobank2}
+          alt="Ecobank Logo"
+          className="w-28 sm:w-36 md:w-44 mb-4"
+        />
+
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
+          Welcome!
+        </h1>
+        <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8">
+          Sign in to your account to access your banking services and manage your finances with ease.
+        </p>
+        <a
+          href="https://ecobank.com/personal-banking"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-red-600 px-4 sm:px-6 py-2 sm:py-3 rounded-md font-bold hover:bg-red-700"
         >
-          Count is {count}
-        </button>
-      </section>
+          Learn More
+        </a>
+      </div>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      {/* Right Panel */}
+      <div className="flex-1 flex justify-center items-center px-6 py-12 bg-black bg-opacity-40">
+        <LoginForm />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
