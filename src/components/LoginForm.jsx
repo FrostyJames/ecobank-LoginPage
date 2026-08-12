@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -10,38 +11,77 @@ function LoginForm() {
       alert("Please fill in all fields.");
       return;
     }
-    console.log("logging in with", username, password);
+    console.log("Logging in with", username, password, rememberMe);
   };
 
   return (
-    <div className="bg-white bg-opacity-10 p-6 sm:p-8 rounded-xl shadow-lg text-center w-full max-w-sm sm:max-w-md md:max-w-lg">
-      <h2 className="text-white text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Login here</h2>
-      <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-          className="w-full px-3 sm:px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        />
+    <div className="backdrop-blur-lg bg-white/10 p-8 rounded-2xl shadow-2xl w-full max-w-md border border-white/20">
+      {/* Header */}
+      <h2 className="text-white text-2xl sm:text-3xl font-extrabold mb-6 text-center">
+        Login to Ecobank
+      </h2>
+     
 
-        <input
-          type="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          className="w-full px-3 sm:px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        />
+      {/* Form */}
+      <form onSubmit={handleSubmit} className="space-y-5">
+        {/* Username */}
+        <div className="text-left">
+          <label className="block text-gray-200 text-sm mb-2">Username</label>
+          <input
+            type="text"
+            placeholder="Enter your username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            className="w-full px-4 py-3 rounded-lg bg-white/20 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+          />
+        </div>
 
+        {/* Password */}
+        <div className="text-left">
+          <label className="block text-gray-200 text-sm mb-2">Password</label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="w-full px-4 py-3 rounded-lg bg-white/20 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+          />
+        </div>
+
+        {/* Remember Me */}
+        <div className="flex items-center justify-between text-sm text-gray-300">
+          <label className="flex items-center">
+            <input
+              type="checkbox"
+              checked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
+              className="mr-2 accent-indigo-500"
+            />
+            Remember Me
+          </label>
+          <a href="#" className="hover:underline hover:text-white">
+            Forgot Password?
+          </a>
+        </div>
+
+        {/* Submit Button */}
         <button
           type="submit"
-          className="w-full py-2 sm:py-3 rounded-md bg-gradient-to-r from-orange-500 to-pink-600 text-white font-bold hover:opacity-90"
+          className="w-full py-3 rounded-lg bg-black text-white font-bold tracking-wide shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-200"
         >
-          Submit
+          Sign In
         </button>
       </form>
+
+      {/* Footer Links */}
+      <div className="mt-6 text-sm text-gray-300 text-center">
+        Don’t have an account?{" "}
+        <a href="#" className="hover:underline hover:text-white font-semibold">
+          Create Account
+        </a>
+      </div>
     </div>
   );
 }
