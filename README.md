@@ -1,3 +1,2 @@
 # ecobank-LoginPage
-A ui design of a login page for Ecobank 
-
+A ui design of a login page for Ecobank
